@@ -9,8 +9,10 @@ class Ball extends GameObject {
     private float dx = 2.5f;
     private float dy = 2.5f;
 
-    public Ball(Main main) {
+    public Ball(Main main, int x, int y) {
         this.main = main;
+        this.x = x;
+        this.y = y;
     }
 
     @Override
@@ -26,7 +28,9 @@ class Ball extends GameObject {
         list.forEach(o ->{
             if(o instanceof Collision){
                 Collision collision = (Collision) o;
-                if (collision.onHit((int)(x + dx), (int)(y + dy))) dy *= -1;
+                if (collision.onHit((int)(x + dx), (int)(y + dy))){
+                    dy *= -1;
+                }
             }
         });
 

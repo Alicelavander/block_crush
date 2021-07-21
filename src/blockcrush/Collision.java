@@ -1,5 +1,5 @@
 package blockcrush;
 
 public interface Collision {
-    public boolean onHit(int x, int y);
+    boolean onHit(int x, int y);
 }

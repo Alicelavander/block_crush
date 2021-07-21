@@ -4,7 +4,7 @@ import processing.core.PConstants;
 
 import java.util.List;
 
-class Paddle extends GameObject implements Collision{
+class Paddle extends GameObject implements Collision {
     private final Main main;
     int x = 255;
     int y = 400;
@@ -28,7 +28,9 @@ class Paddle extends GameObject implements Collision{
 
     @Override
     public boolean onHit(int bx, int by) {
-        if ((x - 25) <= bx && bx <= (x + 25) && (y - 10) <= by && by <= (y + 10)) return true;
+        if ((x - 25) <= bx && bx <= (x + 25) && (y - 10) <= by && by <= (y + 10)) {
+            return true;
+        }
         return false;
     }
 }
