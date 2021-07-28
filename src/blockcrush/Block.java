@@ -6,7 +6,6 @@ import processing.core.PConstants;
 import java.util.List;
 
 public class Block extends GameObject implements Collision {
-    private final Main main;
     int x;
     int y;
     int w;
@@ -14,7 +13,7 @@ public class Block extends GameObject implements Collision {
     boolean visible = true;
 
     public Block(Main main, int x, int y, int w, int h) {
-        this.main = main;
+        super(main);
         this.x = x;
         this.y = y;
         this.w = w;
@@ -24,8 +23,9 @@ public class Block extends GameObject implements Collision {
     @Override
     public void draw() {
         if(visible) {
-            main.rectMode(PConstants.CORNER);
-            main.rect(x, y, w, h);
+            pApplet.fill(255, 255, 255);
+            pApplet.rectMode(PConstants.CORNER);
+            pApplet.rect(x, y, w, h);
         }
     }
 

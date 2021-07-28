@@ -16,6 +16,7 @@ class Paddle extends GameObject implements Collision {
     public void draw() {
         pApplet.strokeWeight(2);
         pApplet.rectMode(PConstants.RADIUS);
+        pApplet.fill(255, 255, 255);
         pApplet.rect(x, y, 25, 10);
     }
 

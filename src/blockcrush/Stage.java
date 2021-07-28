@@ -1,4 +1,6 @@
 package blockcrush;
+import blockcrush.ui.Button;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.lang.reflect.Array;
@@ -11,12 +13,14 @@ class Stage {
     private final Main main;
     Ball ball;
     Paddle paddle;
+    Button button;
     Score score = new Score();
     List<GameObject> objects = new ArrayList<>();
 
     public Stage(Main main) {
         this.main = main;
         this.ball = new Ball(main, main.width/2, main.height/2);
+        this.button = new Button(main);
         //this.paddle = new Paddle(main);
 
         objects.add(new Ball(main, main.width/2, main.height/2));
@@ -38,12 +42,17 @@ class Stage {
         //ball.draw();
         //paddle.draw();
         objects.forEach(o -> o.draw());
+
+        button.setPosition(100, 100);
+        button.setSize(50, 60);
+        button.draw();
     }
 
     void update() {
         //ball.update();
         //paddle.update();
         //ball.onHit(paddle);
+        //button.update();
 
         objects.forEach(o -> o.update(objects));
     }

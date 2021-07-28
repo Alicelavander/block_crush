@@ -7,7 +7,7 @@ import java.util.List;
 public class GameObject {
     protected PApplet pApplet;
 
-    GameObject(PApplet pApplet){
+    public GameObject(PApplet pApplet){
         this.pApplet = pApplet;
     }
 
