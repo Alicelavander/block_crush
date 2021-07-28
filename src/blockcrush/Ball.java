@@ -3,23 +3,22 @@ package blockcrush;
 import java.util.List;
 
 class Ball extends GameObject {
-    private final Main main;
     int x = 250;
     int y = 50;
     private float dx = 2.5f;
     private float dy = 2.5f;
 
     public Ball(Main main, int x, int y) {
-        this.main = main;
+        super(main);
         this.x = x;
         this.y = y;
     }
 
     @Override
     public void draw() {
-        main.strokeWeight(10);
-        main.stroke(255);
-        main.point(x, y);
+        pApplet.strokeWeight(10);
+        pApplet.stroke(255);
+        pApplet.point(x, y);
     }
 
     @Override
@@ -37,8 +36,8 @@ class Ball extends GameObject {
         x += dx;
         y += dy;
 
-        if (x > main.width || x < 0) dx *= -1;
-        if (y > main.height || y < 0) dy *= -1;
+        if (x > pApplet.width || x < 0) dx *= -1;
+        if (y > pApplet.height || y < 0) dy *= -1;
     }
 
     void onHit(Paddle paddle) {

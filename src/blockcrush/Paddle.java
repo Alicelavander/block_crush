@@ -5,25 +5,24 @@ import processing.core.PConstants;
 import java.util.List;
 
 class Paddle extends GameObject implements Collision {
-    private final Main main;
     int x = 255;
     int y = 400;
 
     public Paddle(Main main) {
-        this.main = main;
+        super(main);
     }
 
     @Override
     public void draw() {
-        main.strokeWeight(2);
-        main.rectMode(PConstants.RADIUS);
-        main.rect(x, y, 25, 10);
+        pApplet.strokeWeight(2);
+        pApplet.rectMode(PConstants.RADIUS);
+        pApplet.rect(x, y, 25, 10);
     }
 
     @Override
     public void update(List<GameObject> list) {
-        if (main.keyPressed == true && main.keyCode == 37) x -= 5;
-        else if (main.keyPressed == true && main.keyCode == 39) x += 5;
+        if (pApplet.keyPressed == true && pApplet.keyCode == 37) x -= 5;
+        else if (pApplet.keyPressed == true && pApplet.keyCode == 39) x += 5;
     }
 
     @Override
