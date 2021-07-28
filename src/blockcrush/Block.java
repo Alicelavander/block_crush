@@ -35,8 +35,8 @@ public class Block extends GameObject implements Collision {
 
     @Override
     public boolean onHit(int bx, int by) {
-        if (this.visible && x < bx && (bx + w) > bx && y < by && (y + h) > by){
-            this.visible = false;
+        if (visible && x < bx && (x + w) > bx && y < by && (y + h) > by){
+            visible = false;
             return true;
         }
         return false;
