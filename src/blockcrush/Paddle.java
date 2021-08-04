@@ -1,5 +1,6 @@
 package blockcrush;
 
+import processing.core.PApplet;
 import processing.core.PConstants;
 
 import java.util.List;
@@ -8,8 +9,8 @@ class Paddle extends GameObject implements Collision {
     int x = 255;
     int y = 400;
 
-    public Paddle(Main main) {
-        super(main);
+    public Paddle(PApplet applet) {
+        super(applet);
     }
 
     @Override

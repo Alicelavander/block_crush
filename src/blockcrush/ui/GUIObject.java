@@ -2,6 +2,7 @@ package blockcrush.ui;
 
 import blockcrush.GameObject;
 import blockcrush.Main;
+import processing.core.PApplet;
 
 public class GUIObject extends GameObject {
     int x;
@@ -9,8 +10,8 @@ public class GUIObject extends GameObject {
     int width;
     int height;
 
-    public GUIObject(Main main){
-        super(main);
+    public GUIObject(PApplet applet){
+        super(applet);
     }
 
     public void setPosition(int x, int y){

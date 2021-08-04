@@ -1,11 +1,12 @@
 package blockcrush.ui;
 
 import blockcrush.Main;
+import processing.core.PApplet;
 
 public class Button extends GUIObject{
 
-    public Button(Main main) {
-        super(main);
+    public Button(PApplet applet) {
+        super(applet);
     }
 
     public void draw(){

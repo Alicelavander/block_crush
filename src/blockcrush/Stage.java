@@ -1,6 +1,7 @@
 package blockcrush;
 import blockcrush.ui.Button;
 import blockcrush.ui.Text;
+import processing.core.PApplet;
 
 import java.applet.Applet;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ class Stage {
     final int maxBlockHCount = 4;
     final int blockSpace = 4;
 
-    private final Main main;
+    private final PApplet applet;
     Ball ball;
     Paddle paddle;
     Button button;
@@ -20,29 +21,29 @@ class Stage {
     Score score = new Score();
     List<GameObject> objects = new ArrayList<>();
 
-    public Stage(Main main) {
-        this.main = main;
-        this.ball = new Ball(main, main.width/2, main.height/2);
-        this.button = new Button(main);
-        this.text = new Text(main, "reStart");
+    public Stage(PApplet applet) {
+        this.applet = applet;
+        this.ball = new Ball(applet, applet.width/2, applet.height/2);
+        this.button = new Button(applet);
+        this.text = new Text(applet, "reStart");
         //this.paddle = new Paddle(main);
 
-        objects.add(new Ball(main, main.width/2, main.height/2));
-        objects.add(new Paddle(main));
+        objects.add(new Ball(applet, applet.width/2, applet.height/2));
+        objects.add(new Paddle(applet));
 
-        int blockW = this.main.width/maxBlockWCount;
+        int blockW = this.applet.width/maxBlockWCount;
         int blockH = 30;
         for(int i=0; i<maxBlockHCount; i++) {
             for(int j=0; j<maxBlockWCount; j++) {
                 int px = j*blockW + blockSpace;
                 int py = i*blockH + blockSpace;
-                objects.add(new Block(main, px, py, blockW-blockSpace*2, blockH-blockSpace*2));
+                objects.add(new Block(applet, px, py, blockW-blockSpace*2, blockH-blockSpace*2));
             }
         }
     }
 
     void draw() {
-        main.clear();
+        applet.clear();
         //ball.draw();
         //paddle.draw();
         objects.forEach(o -> o.draw());

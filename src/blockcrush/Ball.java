@@ -1,5 +1,7 @@
 package blockcrush;
 
+import processing.core.PApplet;
+
 import java.util.List;
 
 class Ball extends GameObject {
@@ -8,8 +10,8 @@ class Ball extends GameObject {
     private float dx = 2.5f;
     private float dy = 2.5f;
 
-    public Ball(Main main, int x, int y) {
-        super(main);
+    public Ball(PApplet applet, int x, int y) {
+        super(applet);
         this.x = x;
         this.y = y;
     }

@@ -1,12 +1,13 @@
 package blockcrush.ui;
 
 import blockcrush.Main;
+import processing.core.PApplet;
 
 public class Text extends GUIObject {
     public String text;
 
-    public Text(Main main, String string) {
-        super(main);
+    public Text(PApplet applet, String string) {
+        super(applet);
         this.text = string;
     }
 

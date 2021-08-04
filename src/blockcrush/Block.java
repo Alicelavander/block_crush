@@ -12,8 +12,8 @@ public class Block extends GameObject implements Collision {
     int h;
     boolean visible = true;
 
-    public Block(Main main, int x, int y, int w, int h) {
-        super(main);
+    public Block(PApplet applet, int x, int y, int w, int h) {
+        super(applet);
         this.x = x;
         this.y = y;
         this.w = w;
