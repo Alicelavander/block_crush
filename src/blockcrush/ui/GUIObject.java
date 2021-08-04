@@ -23,4 +23,7 @@ public class GUIObject extends GameObject {
         this.width = w;
         this.height = h;
     }
+
+    public void validate() {
+    }
 }

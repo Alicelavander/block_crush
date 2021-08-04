@@ -13,6 +13,7 @@ public class Text extends GUIObject {
 
     @Override
     public void draw() {
+        pApplet.fill(255, 255, 255);
         pApplet.text(this.text, x, y, width, height);
     }
 }

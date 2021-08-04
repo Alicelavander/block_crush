@@ -1,6 +1,7 @@
 package blockcrush;
 
 import processing.core.PApplet;
+import processing.event.MouseEvent;
 
 public class Main extends PApplet {
     Stage stage;

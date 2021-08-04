@@ -1,7 +1,9 @@
 package blockcrush;
 import blockcrush.ui.Button;
+import blockcrush.ui.ClickListener;
 import blockcrush.ui.Text;
 import processing.core.PApplet;
+import processing.event.MouseEvent;
 
 import java.applet.Applet;
 import java.util.ArrayList;
@@ -17,16 +19,24 @@ class Stage {
     Ball ball;
     Paddle paddle;
     Button button;
-    Text text;
     Score score = new Score();
     List<GameObject> objects = new ArrayList<>();
 
     public Stage(PApplet applet) {
         this.applet = applet;
         this.ball = new Ball(applet, applet.width/2, applet.height/2);
-        this.button = new Button(applet);
-        this.text = new Text(applet, "reStart");
+        this.button = new Button(applet, "reStart");
         //this.paddle = new Paddle(main);
+        button.setPosition(100, 100);
+        button.setSize(50, 60);
+        button.validate();
+
+        this.button.setOnClickListener(new ClickListener() {
+            @Override
+            public void onClick(int x, int y) {
+                System.out.println("On Clicked");
+            }
+        });
 
         objects.add(new Ball(applet, applet.width/2, applet.height/2));
         objects.add(new Paddle(applet));
@@ -48,13 +58,7 @@ class Stage {
         //paddle.draw();
         objects.forEach(o -> o.draw());
 
-        button.setPosition(100, 100);
-        button.setSize(50, 60);
         button.draw();
-
-        text.setPosition(100, 100);
-        text.setSize(50, 60);
-        text.draw();
     }
 
     void update() {
