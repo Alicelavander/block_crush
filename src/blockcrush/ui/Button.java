@@ -15,6 +15,7 @@ public class Button extends GUIObject{
             pApplet.fill(255, 0, 255);
         }
         pApplet.rect(x, y, width, height);
+        pApplet.fill(255, 255, 255);
     }
 
     public void update(){
