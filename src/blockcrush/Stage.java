@@ -18,25 +18,12 @@ class Stage {
     private final PApplet applet;
     Ball ball;
     Paddle paddle;
-    Button button;
     Score score = new Score();
     List<GameObject> objects = new ArrayList<>();
 
     public Stage(PApplet applet) {
         this.applet = applet;
         this.ball = new Ball(applet, applet.width/2, applet.height/2);
-        this.button = new Button(applet, "reStart");
-        //this.paddle = new Paddle(main);
-        button.setPosition(100, 100);
-        button.setSize(50, 60);
-        button.validate();
-
-        this.button.setOnClickListener(new ClickListener() {
-            @Override
-            public void onClick(int x, int y) {
-                System.out.println("On Clicked");
-            }
-        });
 
         objects.add(new Ball(applet, applet.width/2, applet.height/2));
         objects.add(new Paddle(applet));
@@ -55,8 +42,6 @@ class Stage {
     void draw() {
         applet.clear();
         objects.forEach(o -> o.draw());
-
-        button.draw();
     }
 
     void update() {

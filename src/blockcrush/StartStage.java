@@ -16,7 +16,7 @@ class StartStage {
     public StartStage(Main main) {
         this.button = new Button(main, "Start");
         button.setPosition(300, 100);
-        button.setSize(40, 10);
+        button.setSize(40, 30);
         button.validate();
 
         this.button.setOnClickListener(new ClickListener() {
