@@ -54,19 +54,12 @@ class Stage {
 
     void draw() {
         applet.clear();
-        //ball.draw();
-        //paddle.draw();
         objects.forEach(o -> o.draw());
 
         button.draw();
     }
 
     void update() {
-        //ball.update();
-        //paddle.update();
-        //ball.onHit(paddle);
-        //button.update();
-
         objects.forEach(o -> o.update(objects));
     }
 }
